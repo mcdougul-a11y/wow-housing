@@ -7,77 +7,57 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="grid-overlay.css">
     <style>
-        /* Mini-map removed */
-        /* Force the map display to a fixed "render" resolution and add a recessed frame */
-        /* Container keeps a 10px gap to the viewport edges and centers the map */
-        /* Page container: responsive, centered, not full viewport so it can sit inside the site layout */
-        .map-container {
-            /* allow the map to render at its native size and let the page scroll as needed */
-            display: block;
-            box-sizing: border-box;
-            /* margin/padding intentionally handled in external stylesheet to enable centering */
-            overflow: auto; /* allow scrolling when the native map is larger than viewport */
-        }
-
-        .map-background {
-            /* Render at the pixel size assigned by JS (native/reference resolution).
+    /* Mini-map removed */
+    /* Force the map display to a fixed "render" resolution and add a recessed frame */
+    /* Container keeps a 10px gap to the viewport edges and centers the map */
+    /* Page container: responsive, centered, not full viewport so it can sit inside the site layout */
+    .map-container {
+        /* allow the map to render at its native size and let the page scroll as needed */
+        display: block;
+        box-sizing: border-box;
+        /* margin/padding intentionally handled in external stylesheet to enable centering */
+        overflow: auto; /* allow scrolling when the native map is larger than viewport */
+    }
+    .map-background {
+        /* Render at the pixel size assigned by JS (native/reference resolution).
            JS will set explicit width/height/background-size on the element. */
-            background-image: url('maps/alliance_map.jpg');
-            background-repeat: no-repeat;
-            background-position: center top;
-            /* image itself has no rounding or frame; viewport (.map-inner) provides rounded border */
-            border-radius: 0;
-            /* No border or shadow on the image itself; viewport has the visible frame */
-            border: none;
-            box-shadow: none;
-            overflow: visible;
-            box-sizing: border-box;
-            touch-action: none; /* pointer gestures disabled by earlier edits */
-            cursor: default;
-            position: relative;
-            display: block;
-        }
-        /* Responsive inline plot grid (below the map) */
-        .inline-plot-list {
-            padding: 12px 24px;
-        }
-
-            .inline-plot-list h3 {
-                text-align: center;
-                margin: 0 0 12px 0;
-                max-width: 1200px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-        .inline-plot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
-            align-items: start;
-            width: 100%;
-            box-sizing: border-box;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .plot-card {
-            background: rgba(20,20,20,0.6);
-            border-radius: 8px;
-            padding: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            color: #fff;
-        }
-
-        .plot-card-header {
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .plot-card-body {
-            display: flex;
-            gap: 8px;
-        }
+        background-image: url('maps/alliance_map.jpg');
+        background-repeat: no-repeat;
+    background-position: center top;
+    /* image itself has no rounding or frame; viewport (.map-inner) provides rounded border */
+    border-radius: 0;
+        /* No border or shadow on the image itself; viewport has the visible frame */
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+        box-sizing: border-box;
+        touch-action: none; /* pointer gestures disabled by earlier edits */
+        cursor: default;
+        position: relative;
+        display: block;
+    }
+    /* Responsive inline plot grid (below the map) */
+    .inline-plot-list { padding: 12px 24px; }
+    .inline-plot-list h3 { text-align: center; margin: 0 0 12px 0; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .inline-plot-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        align-items: start;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .plot-card {
+        background: rgba(20,20,20,0.6);
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        color: #fff;
+    }
+    .plot-card-header { font-weight: 600; margin-bottom: 6px; }
+    .plot-card-body { display:flex; gap:8px; }
     </style>
 </head>
 <body>
@@ -106,7 +86,7 @@
         </div>
         <!-- changeMapBtn removed: direct map buttons available in legend below -->
         <div style="margin-top:8px; text-align:center;">
-            <div style="display:flex; gap:6px; justify-content:center; margin-top:6px;">
+                <div style="display:flex; gap:6px; justify-content:center; margin-top:6px;">
                 <button id="chooseAllianceLegend" style="padding:6px 8px; font-size:12px;">Alliance</button>
                 <button id="chooseHordeLegend" style="padding:6px 8px; font-size:12px;">Horde</button>
             </div>
@@ -118,35 +98,35 @@
                     <button id="localeBtnEn" class="locale-flag-btn" data-locale="en" title="English" aria-label="English">
                         <!-- US flag SVG (compact) -->
                         <svg class="locale-flag" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <rect width="512" height="512" fill="#b22234" />
+                            <rect width="512" height="512" fill="#b22234"/>
                             <g fill="#fff">
-                                <rect y="36" width="512" height="36" />
-                                <rect y="108" width="512" height="36" />
-                                <rect y="180" width="512" height="36" />
-                                <rect y="252" width="512" height="36" />
-                                <rect y="324" width="512" height="36" />
-                                <rect y="396" width="512" height="36" />
+                                <rect y="36" width="512" height="36"/>
+                                <rect y="108" width="512" height="36"/>
+                                <rect y="180" width="512" height="36"/>
+                                <rect y="252" width="512" height="36"/>
+                                <rect y="324" width="512" height="36"/>
+                                <rect y="396" width="512" height="36"/>
                             </g>
-                            <rect width="224" height="224" fill="#3c3b6e" />
+                            <rect width="224" height="224" fill="#3c3b6e"/>
                             <!-- simple star grid (decorative, not full accuracy) -->
                             <g fill="#fff">
                                 <!-- draw a few small stars -->
-                                <circle cx="28" cy="28" r="8" />
-                                <circle cx="76" cy="28" r="8" />
-                                <circle cx="124" cy="28" r="8" />
-                                <circle cx="172" cy="28" r="8" />
-                                <circle cx="52" cy="60" r="8" />
-                                <circle cx="100" cy="60" r="8" />
-                                <circle cx="148" cy="60" r="8" />
+                                <circle cx="28" cy="28" r="8"/>
+                                <circle cx="76" cy="28" r="8"/>
+                                <circle cx="124" cy="28" r="8"/>
+                                <circle cx="172" cy="28" r="8"/>
+                                <circle cx="52" cy="60" r="8"/>
+                                <circle cx="100" cy="60" r="8"/>
+                                <circle cx="148" cy="60" r="8"/>
                             </g>
                         </svg>
                     </button>
                     <button id="localeBtnDe" class="locale-flag-btn" data-locale="de" title="Deutsch" aria-label="Deutsch">
                         <!-- German flag SVG (compact) -->
                         <svg class="locale-flag" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <rect width="3" height="2" fill="#000" />
-                            <rect y="0.66" width="3" height="0.66" fill="#dd0000" />
-                            <rect y="1.32" width="3" height="0.68" fill="#ffce00" />
+                            <rect width="3" height="2" fill="#000"/>
+                            <rect y="0.66" width="3" height="0.66" fill="#dd0000"/>
+                            <rect y="1.32" width="3" height="0.68" fill="#ffce00"/>
                         </svg>
                     </button>
                 </div>
@@ -159,8 +139,8 @@
         <!-- Edit plots button removed; inline editing available below -->
         <!-- Zoom controls removed: zoom is now handled via mouse wheel over the map -->
         <!-- on-screen pan buttons removed -->
-
-
+        
+        
     </div>
 
     <!-- Inline editable plot list shown under the map (compact grid) -->
@@ -184,129 +164,129 @@
         const housingData = {
         };
 
-        // House plot positions loaded from external JSON file
-        let plotPositions = [];
-        let mapImageData = {};
-        // Cached Image used for measuring the map dimensions to avoid creating a new Image on every update
-        let cachedMapImage = new Image();
-        let cachedMapImagePath = null;
-        // Global debug toggle: set window.__housingDebug = true in console to enable verbose logs
-        if (typeof window !== 'undefined' && typeof window.__housingDebug === 'undefined') window.__housingDebug = false;
-        // Cached DOM lists for hot-path rendering
-        let cachedPlots = [];
-        let cachedIcons = [];
-        let cachedDots = [];
-        let cachedLabels = [];
+    // House plot positions loaded from external JSON file
+    let plotPositions = [];
+    let mapImageData = {};
+    // Cached Image used for measuring the map dimensions to avoid creating a new Image on every update
+    let cachedMapImage = new Image();
+    let cachedMapImagePath = null;
+    // Global debug toggle: set window.__housingDebug = true in console to enable verbose logs
+    if (typeof window !== 'undefined' && typeof window.__housingDebug === 'undefined') window.__housingDebug = false;
+    // Cached DOM lists for hot-path rendering
+    let cachedPlots = [];
+    let cachedIcons = [];
+    let cachedDots = [];
+    let cachedLabels = [];
 
-        // Coalesced update scheduler using requestAnimationFrame
-        let updateScheduled = false;
-        function scheduleUpdatePlotPositions() {
-            if (updateScheduled) return;
-            updateScheduled = true;
-            requestAnimationFrame(() => {
-                updateScheduled = false;
-                try { updatePlotPositions(); } catch (e) { console.warn('scheduled updatePlotPositions error', e); }
-            });
-        }
+    // Coalesced update scheduler using requestAnimationFrame
+    let updateScheduled = false;
+    function scheduleUpdatePlotPositions() {
+        if (updateScheduled) return;
+        updateScheduled = true;
+        requestAnimationFrame(() => {
+            updateScheduled = false;
+            try { updatePlotPositions(); } catch (e) { console.warn('scheduled updatePlotPositions error', e); }
+        });
+    }
 
-        // Simple debounce helper
-        function debounce(fn, wait) {
-            let t = null;
-            return function (...args) {
-                if (t) clearTimeout(t);
-                t = setTimeout(() => { t = null; fn.apply(this, args); }, wait);
-            };
-        }
-        // user-entered overrides stored per map: { '<mapFilename>': { plotNumber: name, ... }, ... }
-        let housingOverridesByMap = {};
-        // interested persons per plot, per map: { '<mapFilename>': { plotNumber: 'names, ...' }, ... }
-        let housingInterestedByMap = {};
-
-        // Minimal translations for visible UI (table and related labels)
-        const translations = {
-            en: {
-                inlinePlotHeader: 'Plots (Interested)',
-                plotLabel: 'Plot {num}',
-                placeholderInterested: 'Interested',
-                legendTitle: 'Legend',
-                availableLabel: 'Available',
-                interestedLabel: 'Interested',
-                chooseAlliance: 'Alliance',
-                chooseHorde: 'Horde',
-                plotToggle: 'Plot #',
-                zoomReset: '100%'
-            },
-            de: {
-                inlinePlotHeader: 'Grundstücke (Interessenten)',
-                plotLabel: 'Grundstück {num}',
-                placeholderInterested: 'Interessiert',
-                legendTitle: 'Legende',
-                availableLabel: 'Verfügbar',
-                interestedLabel: 'Interessenten',
-                chooseAlliance: 'Allianz',
-                chooseHorde: 'Horde',
-                plotToggle: 'Grundstück Nr.',
-                zoomReset: '100%'
-            }
+    // Simple debounce helper
+    function debounce(fn, wait) {
+        let t = null;
+        return function(...args) {
+            if (t) clearTimeout(t);
+            t = setTimeout(() => { t = null; fn.apply(this, args); }, wait);
         };
+    }
+    // user-entered overrides stored per map: { '<mapFilename>': { plotNumber: name, ... }, ... }
+    let housingOverridesByMap = {};
+    // interested persons per plot, per map: { '<mapFilename>': { plotNumber: 'names, ...' }, ... }
+    let housingInterestedByMap = {};
 
-        // Add interestedPrefix translations
-        translations.en.interestedPrefix = 'Interested: {names}';
-        translations.de.interestedPrefix = 'Interessenten: {names}';
-
-        function applyVisibleLocale(locale) {
-            try {
-                if (locale) try { localStorage.setItem('locale', locale); } catch (e) { }
-                // update legend and inline header/buttons
-                const inlineHeader = document.getElementById('inlinePlotHeader');
-                if (inlineHeader) inlineHeader.textContent = getText('inlinePlotHeader');
-                const legendTitle = document.querySelector('.legend .legend-title');
-                if (legendTitle) legendTitle.textContent = getText('legendTitle') || legendTitle.textContent;
-                const legendSpans = document.querySelectorAll('.legend .legend-item > span');
-                if (legendSpans && legendSpans.length >= 2) {
-                    legendSpans[0].textContent = getText('availableLabel') || legendSpans[0].textContent;
-                    legendSpans[1].textContent = getText('interestedLabel') || legendSpans[1].textContent;
-                }
-                const chooseAllianceLegendBtn = document.getElementById('chooseAllianceLegend');
-                if (chooseAllianceLegendBtn) chooseAllianceLegendBtn.textContent = getText('chooseAlliance') || chooseAllianceLegendBtn.textContent;
-                const chooseHordeLegendBtn = document.getElementById('chooseHordeLegend');
-                if (chooseHordeLegendBtn) chooseHordeLegendBtn.textContent = getText('chooseHorde') || chooseHordeLegendBtn.textContent;
-                const toggleBtn = document.getElementById('togglePlotNumbersBtn');
-                if (toggleBtn) toggleBtn.textContent = getText('plotToggle') || toggleBtn.textContent;
-                const zoomBtn = document.getElementById('zoomResetBtn');
-                if (zoomBtn) zoomBtn.textContent = getText('zoomReset') || zoomBtn.textContent;
-                // Update existing inline plot list
-                buildInlinePlotList();
-            } catch (e) { console.warn('applyVisibleLocale error', e); }
+    // Minimal translations for visible UI (table and related labels)
+    const translations = {
+        en: {
+            inlinePlotHeader: 'Plots (Interested)',
+            plotLabel: 'Plot {num}',
+            placeholderInterested: 'Interested',
+            legendTitle: 'Legend',
+            availableLabel: 'Available',
+            interestedLabel: 'Interested',
+            chooseAlliance: 'Alliance',
+            chooseHorde: 'Horde',
+            plotToggle: 'Plot #',
+            zoomReset: '100%'
+        },
+        de: {
+            inlinePlotHeader: 'Grundstücke (Interessenten)',
+            plotLabel: 'Grundstück {num}',
+            placeholderInterested: 'Interessiert',
+            legendTitle: 'Legende',
+            availableLabel: 'Verfügbar',
+            interestedLabel: 'Interessenten',
+            chooseAlliance: 'Allianz',
+            chooseHorde: 'Horde',
+            plotToggle: 'Grundstück Nr.',
+            zoomReset: '100%'
         }
+    };
 
-        function getLocale() {
-            try {
-                const saved = localStorage.getItem('locale');
-                if (saved) return saved;
-            } catch (e) { }
-            try {
-                const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-                return nav.startsWith('de') ? 'de' : 'en';
-            } catch (e) { return 'en'; }
-        }
+    // Add interestedPrefix translations
+    translations.en.interestedPrefix = 'Interested: {names}';
+    translations.de.interestedPrefix = 'Interessenten: {names}';
 
-        function formatTemplate(tpl, params) {
-            if (!tpl) return '';
-            return tpl.replace(/\{(\w+)\}/g, function (_, k) { return (params && params[k] != null) ? params[k] : ''; });
-        }
+    function applyVisibleLocale(locale) {
+        try {
+            if (locale) try { localStorage.setItem('locale', locale); } catch (e) {}
+            // update legend and inline header/buttons
+            const inlineHeader = document.getElementById('inlinePlotHeader');
+            if (inlineHeader) inlineHeader.textContent = getText('inlinePlotHeader');
+            const legendTitle = document.querySelector('.legend .legend-title');
+            if (legendTitle) legendTitle.textContent = getText('legendTitle') || legendTitle.textContent;
+            const legendSpans = document.querySelectorAll('.legend .legend-item > span');
+            if (legendSpans && legendSpans.length >= 2) {
+                legendSpans[0].textContent = getText('availableLabel') || legendSpans[0].textContent;
+                legendSpans[1].textContent = getText('interestedLabel') || legendSpans[1].textContent;
+            }
+            const chooseAllianceLegendBtn = document.getElementById('chooseAllianceLegend');
+            if (chooseAllianceLegendBtn) chooseAllianceLegendBtn.textContent = getText('chooseAlliance') || chooseAllianceLegendBtn.textContent;
+            const chooseHordeLegendBtn = document.getElementById('chooseHordeLegend');
+            if (chooseHordeLegendBtn) chooseHordeLegendBtn.textContent = getText('chooseHorde') || chooseHordeLegendBtn.textContent;
+            const toggleBtn = document.getElementById('togglePlotNumbersBtn');
+            if (toggleBtn) toggleBtn.textContent = getText('plotToggle') || toggleBtn.textContent;
+            const zoomBtn = document.getElementById('zoomResetBtn');
+            if (zoomBtn) zoomBtn.textContent = getText('zoomReset') || zoomBtn.textContent;
+            // Update existing inline plot list
+            buildInlinePlotList();
+        } catch (e) { console.warn('applyVisibleLocale error', e); }
+    }
 
-        function getText(key, params) {
-            const loc = getLocale();
-            const set = translations[loc] || translations.en;
-            const tpl = (set && set[key]) ? set[key] : (translations.en[key] || '');
-            return formatTemplate(tpl, params);
-        }
+    function getLocale() {
+        try {
+            const saved = localStorage.getItem('locale');
+            if (saved) return saved;
+        } catch (e) {}
+        try {
+            const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return nav.startsWith('de') ? 'de' : 'en';
+        } catch (e) { return 'en'; }
+    }
+
+    function formatTemplate(tpl, params) {
+        if (!tpl) return '';
+        return tpl.replace(/\{(\w+)\}/g, function(_, k) { return (params && params[k] != null) ? params[k] : ''; });
+    }
+
+    function getText(key, params) {
+        const loc = getLocale();
+        const set = translations[loc] || translations.en;
+        const tpl = (set && set[key]) ? set[key] : (translations.en[key] || '');
+        return formatTemplate(tpl, params);
+    }
 
         async function loadPlotPositions(positionsJson = 'plot-positions.json') {
             try {
-                const response = await fetch(positionsJson);
-                const data = await response.json();
+            const response = await fetch(positionsJson);
+            const data = await response.json();
                 plotPositions = data.plotPositions;
                 mapImageData = data.referenceImage;
                 console.log('Plot positions loaded successfully from', positionsJson, data);
@@ -332,8 +312,8 @@
                     housingInterestedByMap = (result.interested && typeof result.interested === 'object') ? normalizeInterestedMap(result.interested) : {};
                     console.log('Loaded overrides/interested from server', housingOverridesByMap, housingInterestedByMap);
                     // Mirror to localStorage so other tabs see it
-                    try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) { }
-                    try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) { }
+                    try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) {}
+                    try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) {}
                 } else {
                     // fallback to localStorage
                     loadOverridesFromLocal();
@@ -401,7 +381,7 @@
                 // ensure payload is an object (not an array) before sending
                 const payloadInterested = Array.isArray(housingInterestedByMap) ? {} : housingInterestedByMap;
                 // Mirror to localStorage right away so other tabs pick up the change
-                try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) { }
+                try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) {}
                 fetch('api.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -417,22 +397,22 @@
                     }
                 }).catch(err => {
                     console.warn('Server save_interested failed, saving to localStorage', err);
-                    try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) { }
+                    try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e) {}
                 });
             } catch (e) {
-                try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e2) { }
+                try { localStorage.setItem('housing_interested_by_map', JSON.stringify(housingInterestedByMap)); } catch (e2) {}
             }
         }
 
-        // Debounced variant to avoid frequent saves on rapid user input
-        const debouncedSaveInterested = debounce(function () { saveInterested(); }, 700);
+// Debounced variant to avoid frequent saves on rapid user input
+const debouncedSaveInterested = debounce(function() { saveInterested(); }, 700);
 
         function saveOverrides() {
             // Try server save first; fallback to localStorage
             try {
                 const payloadOverrides = Array.isArray(housingOverridesByMap) ? {} : housingOverridesByMap;
                 // Mirror to localStorage right away so other tabs pick up the change
-                try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) { }
+                try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) {}
                 fetch('api.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -447,18 +427,18 @@
                     }
                 }).catch(err => {
                     console.warn('Server save_overrides failed, saving to localStorage', err);
-                    try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) { }
+                    try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e) {}
                 });
             } catch (e) {
-                try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e2) { }
+                try { localStorage.setItem('housing_overrides_by_map', JSON.stringify(housingOverridesByMap)); } catch (e2) {}
             }
         }
 
         function getCurrentMapKey() {
             const mapBackground = document.getElementById('mapBackground');
-            // Return the current map key (filename). Default to alliance_map.jpg
-            const raw = (mapBackground && mapBackground.dataset && mapBackground.dataset.map) || window.selectedMapFilename || 'alliance_map.jpg';
-            return normalizeMapKey(raw);
+        // Return the current map key (filename). Default to alliance_map.jpg
+        const raw = (mapBackground && mapBackground.dataset && mapBackground.dataset.map) || window.selectedMapFilename || 'alliance_map.jpg';
+        return normalizeMapKey(raw);
         }
 
         // Normalize a map key to the filename only (basename), so storage keys are consistent
@@ -480,7 +460,7 @@
 
         function createHousePlots() {
             const mapBackground = document.getElementById('mapBackground');
-
+            
             // Diff-based update: reuse existing .house-plot elements when possible
             const existing = Array.from(mapBackground.querySelectorAll('.house-plot'));
             const existingByNumber = {};
@@ -581,7 +561,7 @@
                     plot.appendChild(lbl);
 
                     // Hover preview: show large preview panel with image, plot number, and interested names
-                    plot.addEventListener('mouseenter', function () {
+                    plot.addEventListener('mouseenter', function() {
                         const mapKey = getCurrentMapKey();
                         const faction = /horde/i.test(mapKey) ? 'horde' : 'alliance';
                         const previewJpg = `plots/${faction}/${position.plotNumber}.jpg`;
@@ -598,7 +578,7 @@
                         intEl.textContent = interestedForMap ? (getText('interestedPrefix', { names: interestedForMap })) : '';
                         preview.style.display = 'block';
                     });
-                    plot.addEventListener('mousemove', function (ev) {
+                    plot.addEventListener('mousemove', function(ev) {
                         const preview = document.getElementById('plotHoverPreview');
                         if (!preview) return;
                         // position near cursor but ensure it doesn't go off-screen
@@ -611,18 +591,18 @@
                         preview.style.left = x + 'px';
                         preview.style.top = y + 'px';
                     });
-                    plot.addEventListener('mouseleave', function () {
+                    plot.addEventListener('mouseleave', function() {
                         const preview = document.getElementById('plotHoverPreview');
                         if (preview) preview.style.display = 'none';
                     });
 
                     // Click behavior: no modal on click (modal functionality removed)
-                    plot.addEventListener('click', function (e) {
+                    plot.addEventListener('click', function(e) {
                         // Intentionally left blank: modal/popup removed
                     });
                 }
 
-
+                
 
 
 
@@ -658,89 +638,89 @@
         // Build an inline editable table under the map for quick edits
         function buildInlinePlotList() {
             const grid = document.getElementById('inlinePlotGrid');
-            if (!grid) return;
-            grid.innerHTML = '';
-            const mapKey = getCurrentMapKey();
-            const mapInterested = housingInterestedByMap[mapKey] || {};
-            plotPositions.forEach(pos => {
-                const card = document.createElement('div');
-                card.className = 'plot-card';
-                const header = document.createElement('div');
-                header.className = 'plot-card-header';
-                header.textContent = getText('plotLabel', { num: pos.plotNumber });
-                const body = document.createElement('div');
-                body.className = 'plot-card-body';
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.placeholder = getText('placeholderInterested');
-                input.value = mapInterested[pos.plotNumber] || '';
-                input.dataset.plotNumber = pos.plotNumber;
-                input.className = 'plot-interested-input';
-                input.addEventListener('input', function () {
-                    const val = input.value.trim();
-                    housingInterestedByMap[mapKey] = housingInterestedByMap[mapKey] || {};
-                    if (val) {
-                        housingInterestedByMap[mapKey][pos.plotNumber] = val;
-                    } else {
-                        delete housingInterestedByMap[mapKey][pos.plotNumber];
-                    }
-                    debouncedSaveInterested();
-                    // update plot DOM class to reflect interested state
-                    const plotEl = document.querySelector(`.house-plot[data-plot-number="${pos.plotNumber}"]`);
-                    if (plotEl) {
-                        if (val) plotEl.classList.add('interested'); else plotEl.classList.remove('interested');
-                    }
+                if (!grid) return;
+                grid.innerHTML = '';
+                const mapKey = getCurrentMapKey();
+                const mapInterested = housingInterestedByMap[mapKey] || {};
+                plotPositions.forEach(pos => {
+                    const card = document.createElement('div');
+                    card.className = 'plot-card';
+                    const header = document.createElement('div');
+                    header.className = 'plot-card-header';
+                    header.textContent = getText('plotLabel', { num: pos.plotNumber });
+                    const body = document.createElement('div');
+                    body.className = 'plot-card-body';
+                    const input = document.createElement('input');
+                        input.type = 'text';
+                        input.placeholder = getText('placeholderInterested');
+                    input.value = mapInterested[pos.plotNumber] || '';
+                    input.dataset.plotNumber = pos.plotNumber;
+                    input.className = 'plot-interested-input';
+                    input.addEventListener('input', function() {
+                        const val = input.value.trim();
+                        housingInterestedByMap[mapKey] = housingInterestedByMap[mapKey] || {};
+                        if (val) {
+                            housingInterestedByMap[mapKey][pos.plotNumber] = val;
+                        } else {
+                            delete housingInterestedByMap[mapKey][pos.plotNumber];
+                        }
+                        debouncedSaveInterested();
+                        // update plot DOM class to reflect interested state
+                        const plotEl = document.querySelector(`.house-plot[data-plot-number="${pos.plotNumber}"]`);
+                        if (plotEl) {
+                            if (val) plotEl.classList.add('interested'); else plotEl.classList.remove('interested');
+                        }
+                    });
+                    body.appendChild(input);
+                    card.appendChild(header);
+                    card.appendChild(body);
+                    grid.appendChild(card);
                 });
-                body.appendChild(input);
-                card.appendChild(header);
-                card.appendChild(body);
-                grid.appendChild(card);
-            });
         }
 
-
+        
 
         // Plot editing via modal removed; use inline grid below the map for edits.
 
         function updatePlotPositions() {
             const mapBackground = document.getElementById('mapBackground');
             const plots = (cachedPlots && cachedPlots.length) ? cachedPlots : document.querySelectorAll('.house-plot');
-
+            
             // Diagnostics: log invocation and count (use distinct var names to avoid redeclare)
             const diagSelectedMap = getCurrentMapKey();
             const diagMapPath = diagSelectedMap && (diagSelectedMap.startsWith('http') || diagSelectedMap.startsWith('/') || diagSelectedMap.startsWith('maps/')) ? diagSelectedMap : ('maps/' + diagSelectedMap);
             if (window.__housingDebug) console.debug('updatePlotPositions: called, plotsFound=', plots.length, 'mapPath=', diagMapPath);
             if (plots.length === 0) return;
-
+            
             // Get the actual map image dimensions and position (same logic as grid)
             // Reuse a cached Image instance to avoid allocating many Image objects during frequent updates
             const mapImage = cachedMapImage;
             const mapPath = (getCurrentMapKey() || '').startsWith('http') || (getCurrentMapKey() || '').startsWith('/') || (getCurrentMapKey() || '').startsWith('maps/') ? getCurrentMapKey() : ('maps/' + getCurrentMapKey());
-            const ensureImageLoaded = function (cb) {
+            const ensureImageLoaded = function(cb) {
                 try {
                     if (cachedMapImagePath !== mapPath) {
                         cachedMapImagePath = mapPath;
                         mapImage.src = mapPath;
                     }
-                } catch (e) { }
+                } catch (e) {}
                 if (mapImage.complete && mapImage.naturalWidth && mapImage.naturalHeight) {
                     // already loaded
-                    try { cb(); } catch (e) { }
+                    try { cb(); } catch (e) {}
                 } else {
                     // wait for load (attach one-time handler)
-                    const onLoad = function () {
-                        try { mapImage.removeEventListener('load', onLoad); } catch (e) { }
-                        try { cb(); } catch (e) { }
+                    const onLoad = function() {
+                        try { mapImage.removeEventListener('load', onLoad); } catch (e) {}
+                        try { cb(); } catch (e) {}
                     };
                     mapImage.addEventListener('load', onLoad);
                 }
             };
-            ensureImageLoaded(function () {
+            ensureImageLoaded(function() {
                 // Use layout sizes (pre-transform) so we compute positions in the wrapper's local coordinate space
                 // (getBoundingClientRect() is affected by the CSS transform scale and will break calculations when zoomed)
                 const containerWidth = mapBackground.clientWidth || mapBackground.offsetWidth || mapBackground.scrollWidth;
                 const containerHeight = mapBackground.clientHeight || mapBackground.offsetHeight || mapBackground.scrollHeight;
-
+                
                 // Determine displayed image dimensions. If the wrapper/background already has explicit
                 // pixel width/height styles (for example the initial forced 1920x1080), prefer those
                 // so plot coordinates map to the visual display. Otherwise fall back to reference/native sizes.
@@ -767,7 +747,7 @@
                         offsetY = 0;
                     }
                 }
-
+                
                 // Ensure the wrapper and background elements match the computed displayed image size
                 // so the wrapper's local coordinate system equals the visual map area.
                 try {
@@ -794,7 +774,7 @@
                 const refHeight = (mapImageData && mapImageData.height) ? mapImageData.height : mapImage.height;
                 const scaleX = imageWidth / refWidth;
                 const scaleY = imageHeight / refHeight;
-
+                
                 // Update plot positions using the same logic as grid
                 const iconWidth = 32; // icon pixel size (adjust if different)
                 const iconHeight = 32;
@@ -860,7 +840,7 @@
                                 lblEl.style.transform = `translate(${offsetX}px, -50%) scale(${invScale})`;
                                 lblEl.style.transformOrigin = 'left center';
                             }
-                        } catch (e) { }
+                        } catch (e) {}
                     }
                 });
                 // After resizing wrapper/background and repositioning plots, ensure view is clamped/centered
@@ -868,171 +848,171 @@
                     // Do not reset translate/zoom here; keep currentTranslate/currentZoom so panning persists.
                     clampTranslate();
                     applyTransform(0);
-                } catch (e) { try { clampTranslate(); applyTransform(0); } catch (ex) { } }
+                } catch (e) { try { clampTranslate(); applyTransform(0); } catch (ex) {} }
             });
         }
 
-        // --- Zoom support ---
-        let currentZoom = 1.0;
+    // --- Zoom support ---
+    let currentZoom = 1.0;
         // track translate offsets (pre-scale coordinates)
         let currentTranslateX = 0;
         let currentTranslateY = 0;
-        // Allow free panning (map can be moved regardless of bounds)
-        let allowFreePan = true;
-        let initialPanApplied = false;
-        // animation handle for fling/inertia
-        let flingAnimation = null;
-        // Auto-fit state: whether we've applied the automatic fit-to-screen yet
-        let autoFitDone = false;
-        // Initial display size on page load (requested)
-        const INITIAL_DISPLAY_WIDTH = 1920;
-        const INITIAL_DISPLAY_HEIGHT = 1080;
-        // Fraction of container to occupy with the map (0..1). 0.7 = 70% of available viewport.
-        const VIEWPORT_FRACTION = 0.7;
-        // Track discrete zoom steps: after 2 steps, next zoom resets to 100%
-        let zoomStepCounter = 0;
+    // Allow free panning (map can be moved regardless of bounds)
+    let allowFreePan = true;
+    let initialPanApplied = false;
+    // animation handle for fling/inertia
+    let flingAnimation = null;
+// Auto-fit state: whether we've applied the automatic fit-to-screen yet
+let autoFitDone = false;
+// Initial display size on page load (requested)
+const INITIAL_DISPLAY_WIDTH = 1920;
+const INITIAL_DISPLAY_HEIGHT = 1080;
+// Fraction of container to occupy with the map (0..1). 0.7 = 70% of available viewport.
+const VIEWPORT_FRACTION = 0.7;
+    // Track discrete zoom steps: after 2 steps, next zoom resets to 100%
+    let zoomStepCounter = 0;
         const MIN_ZOOM = 0.25;
         const MAX_ZOOM = 3.0;
-        // Apply transform with translate + scale (transform-origin fixed at 0 0)
-        function applyTransform(transitionMs = 220) {
-            const wrapper = document.getElementById('zoomWrapper');
-            if (!wrapper) return;
-            if (window.__housingDebug) console.debug('applyTransform', { zoom: currentZoom, tx: currentTranslateX, ty: currentTranslateY, transitionMs });
-            if (transitionMs && transitionMs > 0) wrapper.style.transition = `transform ${transitionMs}ms ease`;
-            else wrapper.style.transition = '';
-            wrapper.style.transformOrigin = '0 0';
-            // Apply current translate and zoom so the map can be panned freely inside the container
-            wrapper.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentZoom})`;
-            const resetBtn = document.getElementById('zoomResetBtn');
-            if (resetBtn) resetBtn.textContent = Math.round(currentZoom * 100) + '%';
-            // Update positions after transform (coalesced via RAF)
-            setTimeout(() => scheduleUpdatePlotPositions(), transitionMs ? Math.max(25, transitionMs - 20) : 25);
-            // Ensure icons/dots use base sizes (no zoom scaling)
-            try {
-                // Use cached node lists when available
-                const icons = (cachedIcons && cachedIcons.length) ? cachedIcons : document.querySelectorAll('.house-icon');
-                const dots = (cachedDots && cachedDots.length) ? cachedDots : document.querySelectorAll('.plot-dot');
-                const labels = (cachedLabels && cachedLabels.length) ? cachedLabels : document.querySelectorAll('.plot-number-label');
-                // Inverse-scale icons/dots so they remain visually constant while the wrapper scales
-                const invScale = (currentZoom && isFinite(currentZoom)) ? (1 / currentZoom) : 1;
-                // Set CSS variables on the wrapper so children can pick them up without iterating all nodes
-                try {
+                // Apply transform with translate + scale (transform-origin fixed at 0 0)
+                function applyTransform(transitionMs = 220) {
                     const wrapper = document.getElementById('zoomWrapper');
-                    if (wrapper) {
-                        wrapper.style.setProperty('--icon-scale', String(invScale));
-                        wrapper.style.setProperty('--label-scale', String(invScale));
-                        wrapper.style.setProperty('--dot-scale', String(invScale));
-                    }
-                } catch (e) { }
-                // Still ensure dot size/width are set (cheap writes)
-                dots.forEach(d => {
-                    d.style.width = '14px';
-                    d.style.height = '14px';
-                });
-            } catch (e) { }
-            // minimap removed
-        }
-
-        function setZoom(newZoom, centerClientX = null, centerClientY = null, animate = true) {
-            // Clamp
-            const z = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Number(newZoom) || 1));
-            // If a center is provided, perform a centered zoom so the point under cursor stays fixed
-            if (centerClientX !== null && centerClientY !== null) {
-                zoomAtPoint(centerClientX, centerClientY, z / currentZoom, !animate);
-                return;
-            }
-            currentZoom = z;
-            // keep translate valid
-            clampTranslate();
-            applyTransform(animate ? 220 : 0);
-        }
-
-        // Zoom about a client (screen) point by a factor (zoomFactor = newZoom/oldZoom)
-        function zoomAtPoint(clientX, clientY, zoomFactor, instant = false) {
-            if (!isFinite(zoomFactor) || zoomFactor <= 0) return;
-            const mapInner = document.querySelector('.map-inner');
-            const wrapper = document.getElementById('zoomWrapper');
-            if (!mapInner || !wrapper) return;
-            const oldZoom = currentZoom;
-            let newZoom = oldZoom * zoomFactor;
-            newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
-            // If zoom didn't change, nothing to do
-            if (Math.abs(newZoom - oldZoom) < 1e-6) return;
-
-            // Compute adjustment so the point under cursor stays stationary.
-            const mapRect = mapInner.getBoundingClientRect();
-            // formula: tx' = tx + (clientX - mapRect.left) * (1/newZoom - 1/oldZoom)
-            const deltaFactor = (1 / newZoom) - (1 / oldZoom);
-            currentTranslateX = currentTranslateX + (clientX - mapRect.left) * deltaFactor;
-            currentTranslateY = currentTranslateY + (clientY - mapRect.top) * deltaFactor;
-
-            currentZoom = newZoom;
-            clampTranslate();
-            applyTransform(instant ? 0 : 160);
-        }
-
-        function zoomIn() { setZoom(Math.min(MAX_ZOOM, currentZoom * 1.2), null, null, true); }
-        function zoomOut() { setZoom(Math.max(MIN_ZOOM, currentZoom / 1.2), null, null, true); }
-        function resetZoom() { currentZoom = 1.0; currentTranslateX = 0; currentTranslateY = 0; applyTransform(160); }
-
-        // Clamp translate so the scaled wrapper always covers the container (no empty gaps)
-        function clampTranslate() {
-            try {
-                if (typeof allowFreePan !== 'undefined' && allowFreePan) {
-                    // Free panning enabled: do not clamp translate to container bounds
-                    // but keep values within a large safe range
-                    if (!Number.isFinite(currentTranslateX)) currentTranslateX = 0;
-                    if (!Number.isFinite(currentTranslateY)) currentTranslateY = 0;
-                    currentTranslateX = Math.max(-100000, Math.min(100000, currentTranslateX));
-                    currentTranslateY = Math.max(-100000, Math.min(100000, currentTranslateY));
-                    return;
-                }
-                const wrapper = document.getElementById('zoomWrapper');
-                const container = document.querySelector('.map-container');
-                if (!wrapper || !container) return;
-                const W = wrapper.offsetWidth || wrapper.clientWidth || 0; // pre-transform width
-                const H = wrapper.offsetHeight || wrapper.clientHeight || 0;
-                const A = container.clientWidth || 0; // container visible area
-                const B = container.clientHeight || 0;
-                const Z = Number(currentZoom) || 1;
-                if (W <= 0 || H <= 0 || A <= 0 || B <= 0) return;
-
-                // layoutLeft/layoutTop = position of the wrapper's top-left inside the container before transform
-                const layoutLeft = (A - W) / 2;
-                const layoutTop = (B - H) / 2;
-
-                // When scaled width <= container, center the scaled element
-                if (Z * W <= A) {
-                    // desired finalLeft = (A - Z*W)/2
-                    currentTranslateX = (W * (1 - Z)) / (2 * Z);
-                } else {
-                    // Constraints derived so that finalLeft = layoutLeft + Z*tx stays within [A - Z*W, 0]
-                    const minTX = ((A + W) / 2 - Z * W) / Z; // ((A+W)/2 - ZW)/Z
-                    const maxTX = -((A - W) / 2) / Z; // -(A-W)/(2Z)
-                    if (!Number.isFinite(minTX) || !Number.isFinite(maxTX)) {
-                        currentTranslateX = Math.max(-10000, Math.min(10000, currentTranslateX));
-                    } else {
-                        currentTranslateX = Math.min(maxTX, Math.max(minTX, currentTranslateX));
-                    }
+                    if (!wrapper) return;
+                    if (window.__housingDebug) console.debug('applyTransform', { zoom: currentZoom, tx: currentTranslateX, ty: currentTranslateY, transitionMs });
+                    if (transitionMs && transitionMs > 0) wrapper.style.transition = `transform ${transitionMs}ms ease`;
+                    else wrapper.style.transition = '';
+                    wrapper.style.transformOrigin = '0 0';
+                    // Apply current translate and zoom so the map can be panned freely inside the container
+                    wrapper.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentZoom})`;
+                    const resetBtn = document.getElementById('zoomResetBtn');
+                    if (resetBtn) resetBtn.textContent = Math.round(currentZoom * 100) + '%';
+                    // Update positions after transform (coalesced via RAF)
+                    setTimeout(() => scheduleUpdatePlotPositions(), transitionMs ? Math.max(25, transitionMs - 20) : 25);
+                    // Ensure icons/dots use base sizes (no zoom scaling)
+                    try {
+                        // Use cached node lists when available
+                        const icons = (cachedIcons && cachedIcons.length) ? cachedIcons : document.querySelectorAll('.house-icon');
+                        const dots = (cachedDots && cachedDots.length) ? cachedDots : document.querySelectorAll('.plot-dot');
+                        const labels = (cachedLabels && cachedLabels.length) ? cachedLabels : document.querySelectorAll('.plot-number-label');
+                        // Inverse-scale icons/dots so they remain visually constant while the wrapper scales
+                        const invScale = (currentZoom && isFinite(currentZoom)) ? (1 / currentZoom) : 1;
+                        // Set CSS variables on the wrapper so children can pick them up without iterating all nodes
+                        try {
+                            const wrapper = document.getElementById('zoomWrapper');
+                            if (wrapper) {
+                                wrapper.style.setProperty('--icon-scale', String(invScale));
+                                wrapper.style.setProperty('--label-scale', String(invScale));
+                                wrapper.style.setProperty('--dot-scale', String(invScale));
+                            }
+                        } catch (e) {}
+                        // Still ensure dot size/width are set (cheap writes)
+                        dots.forEach(d => {
+                            d.style.width = '14px';
+                            d.style.height = '14px';
+                        });
+                    } catch (e) {}
+                    // minimap removed
                 }
 
-                if (Z * H <= B) {
-                    currentTranslateY = (H * (1 - Z)) / (2 * Z);
-                } else {
-                    const minTY = ((B + H) / 2 - Z * H) / Z;
-                    const maxTY = -((B - H) / 2) / Z;
-                    if (!Number.isFinite(minTY) || !Number.isFinite(maxTY)) {
-                        currentTranslateY = Math.max(-10000, Math.min(10000, currentTranslateY));
-                    } else {
-                        currentTranslateY = Math.min(maxTY, Math.max(minTY, currentTranslateY));
+                function setZoom(newZoom, centerClientX = null, centerClientY = null, animate = true) {
+                    // Clamp
+                    const z = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Number(newZoom) || 1));
+                    // If a center is provided, perform a centered zoom so the point under cursor stays fixed
+                    if (centerClientX !== null && centerClientY !== null) {
+                        zoomAtPoint(centerClientX, centerClientY, z / currentZoom, !animate);
+                        return;
                     }
+                    currentZoom = z;
+                    // keep translate valid
+                    clampTranslate();
+                    applyTransform(animate ? 220 : 0);
                 }
 
-                // final sanity guard
-                if (!Number.isFinite(currentTranslateX)) currentTranslateX = 0;
-                if (!Number.isFinite(currentTranslateY)) currentTranslateY = 0;
-            } catch (e) { console.warn('clampTranslate error', e); }
-        }
+                // Zoom about a client (screen) point by a factor (zoomFactor = newZoom/oldZoom)
+                function zoomAtPoint(clientX, clientY, zoomFactor, instant = false) {
+                    if (!isFinite(zoomFactor) || zoomFactor <= 0) return;
+                    const mapInner = document.querySelector('.map-inner');
+                    const wrapper = document.getElementById('zoomWrapper');
+                    if (!mapInner || !wrapper) return;
+                    const oldZoom = currentZoom;
+                    let newZoom = oldZoom * zoomFactor;
+                    newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
+                    // If zoom didn't change, nothing to do
+                    if (Math.abs(newZoom - oldZoom) < 1e-6) return;
+
+                    // Compute adjustment so the point under cursor stays stationary.
+                    const mapRect = mapInner.getBoundingClientRect();
+                    // formula: tx' = tx + (clientX - mapRect.left) * (1/newZoom - 1/oldZoom)
+                    const deltaFactor = (1 / newZoom) - (1 / oldZoom);
+                    currentTranslateX = currentTranslateX + (clientX - mapRect.left) * deltaFactor;
+                    currentTranslateY = currentTranslateY + (clientY - mapRect.top) * deltaFactor;
+
+                    currentZoom = newZoom;
+                    clampTranslate();
+                    applyTransform(instant ? 0 : 160);
+                }
+
+                function zoomIn() { setZoom(Math.min(MAX_ZOOM, currentZoom * 1.2), null, null, true); }
+                function zoomOut() { setZoom(Math.max(MIN_ZOOM, currentZoom / 1.2), null, null, true); }
+                function resetZoom() { currentZoom = 1.0; currentTranslateX = 0; currentTranslateY = 0; applyTransform(160); }
+
+                // Clamp translate so the scaled wrapper always covers the container (no empty gaps)
+                function clampTranslate() {
+                    try {
+                        if (typeof allowFreePan !== 'undefined' && allowFreePan) {
+                            // Free panning enabled: do not clamp translate to container bounds
+                            // but keep values within a large safe range
+                            if (!Number.isFinite(currentTranslateX)) currentTranslateX = 0;
+                            if (!Number.isFinite(currentTranslateY)) currentTranslateY = 0;
+                            currentTranslateX = Math.max(-100000, Math.min(100000, currentTranslateX));
+                            currentTranslateY = Math.max(-100000, Math.min(100000, currentTranslateY));
+                            return;
+                        }
+                        const wrapper = document.getElementById('zoomWrapper');
+                        const container = document.querySelector('.map-container');
+                        if (!wrapper || !container) return;
+                        const W = wrapper.offsetWidth || wrapper.clientWidth || 0; // pre-transform width
+                        const H = wrapper.offsetHeight || wrapper.clientHeight || 0;
+                        const A = container.clientWidth || 0; // container visible area
+                        const B = container.clientHeight || 0;
+                        const Z = Number(currentZoom) || 1;
+                        if (W <= 0 || H <= 0 || A <= 0 || B <= 0) return;
+
+                        // layoutLeft/layoutTop = position of the wrapper's top-left inside the container before transform
+                        const layoutLeft = (A - W) / 2;
+                        const layoutTop = (B - H) / 2;
+
+                        // When scaled width <= container, center the scaled element
+                        if (Z * W <= A) {
+                            // desired finalLeft = (A - Z*W)/2
+                            currentTranslateX = (W * (1 - Z)) / (2 * Z);
+                        } else {
+                            // Constraints derived so that finalLeft = layoutLeft + Z*tx stays within [A - Z*W, 0]
+                            const minTX = ((A + W) / 2 - Z * W) / Z; // ((A+W)/2 - ZW)/Z
+                            const maxTX = -((A - W) / 2) / Z; // -(A-W)/(2Z)
+                            if (!Number.isFinite(minTX) || !Number.isFinite(maxTX)) {
+                                currentTranslateX = Math.max(-10000, Math.min(10000, currentTranslateX));
+                            } else {
+                                currentTranslateX = Math.min(maxTX, Math.max(minTX, currentTranslateX));
+                            }
+                        }
+
+                        if (Z * H <= B) {
+                            currentTranslateY = (H * (1 - Z)) / (2 * Z);
+                        } else {
+                            const minTY = ((B + H) / 2 - Z * H) / Z;
+                            const maxTY = -((B - H) / 2) / Z;
+                            if (!Number.isFinite(minTY) || !Number.isFinite(maxTY)) {
+                                currentTranslateY = Math.max(-10000, Math.min(10000, currentTranslateY));
+                            } else {
+                                currentTranslateY = Math.min(maxTY, Math.max(minTY, currentTranslateY));
+                            }
+                        }
+
+                        // final sanity guard
+                        if (!Number.isFinite(currentTranslateX)) currentTranslateX = 0;
+                        if (!Number.isFinite(currentTranslateY)) currentTranslateY = 0;
+                    } catch (e) { console.warn('clampTranslate error', e); }
+                }
 
         // Helper to initialize UI with selected map
         function applySelectedMap(mapFilename) {
@@ -1081,11 +1061,11 @@
                     // mark that we applied the initial sizing so updatePlotPositions uses the displayed size
                     autoFitDone = true;
                 }
-            } catch (e) { }
+            } catch (e) {}
 
             // Update positions on window resize
             let plotResizeTimeout;
-            window.addEventListener('resize', function () {
+                window.addEventListener('resize', function() {
                 // Clear existing timeout to prevent multiple rapid calls
                 clearTimeout(plotResizeTimeout);
                 // Schedule update via RAF for smoother handling
@@ -1109,7 +1089,7 @@
             return;
         }
 
-        document.addEventListener('DOMContentLoaded', async function () {
+        document.addEventListener('DOMContentLoaded', async function() {
             // If user previously chose a map, use it. Otherwise use default
             let saved = localStorage.getItem('wow_map_choice');
             if (saved) saved = normalizeMapKey(saved);
@@ -1129,7 +1109,7 @@
             // Wire change-map button in legend (if present)
             const changeBtn = document.getElementById('changeMapBtn');
             if (changeBtn) {
-                changeBtn.addEventListener('click', function () {
+                changeBtn.addEventListener('click', function() {
                     showMapSelectionModal();
                 });
             }
@@ -1154,7 +1134,7 @@
                 if (toggleBtn) toggleBtn.textContent = getText('plotToggle') || toggleBtn.textContent;
                 const zoomBtn = document.getElementById('zoomResetBtn');
                 if (zoomBtn) zoomBtn.textContent = getText('zoomReset') || zoomBtn.textContent;
-            } catch (e) { }
+            } catch (e) {}
 
             // Locale flag buttons wiring
             try {
@@ -1166,22 +1146,22 @@
                 }
                 const curLocale = getLocale();
                 setActiveLocaleButton(curLocale);
-                if (btnEn) btnEn.addEventListener('click', function (e) { applyVisibleLocale('en'); setActiveLocaleButton('en'); });
-                if (btnDe) btnDe.addEventListener('click', function (e) { applyVisibleLocale('de'); setActiveLocaleButton('de'); });
-            } catch (e) { }
+                if (btnEn) btnEn.addEventListener('click', function(e) { applyVisibleLocale('en'); setActiveLocaleButton('en'); });
+                if (btnDe) btnDe.addEventListener('click', function(e) { applyVisibleLocale('de'); setActiveLocaleButton('de'); });
+            } catch (e) {}
             // Ensure UI reflects current locale on load
-            try { applyVisibleLocale(getLocale()); } catch (e) { }
+            try { applyVisibleLocale(getLocale()); } catch (e) {}
 
             // Zoom via mouse wheel only when the pointer is over the mapBackground (prevents accidental page zoom)
 
             // Legend direct map buttons
             const chooseAllianceLegend = document.getElementById('chooseAllianceLegend');
             const chooseHordeLegend = document.getElementById('chooseHordeLegend');
-            if (chooseAllianceLegend) chooseAllianceLegend.addEventListener('click', function (e) {
+            if (chooseAllianceLegend) chooseAllianceLegend.addEventListener('click', function(e) {
                 const remember = e.shiftKey === true;
                 chooseMap('alliance_map.jpg', remember);
             });
-            if (chooseHordeLegend) chooseHordeLegend.addEventListener('click', function (e) {
+            if (chooseHordeLegend) chooseHordeLegend.addEventListener('click', function(e) {
                 const remember = e.shiftKey === true;
                 chooseMap('horde_map.jpg', remember);
             });
@@ -1197,17 +1177,17 @@
             }
             // Read persisted preference (default: show)
             let showPlotNumbers = true;
-            try { const raw = localStorage.getItem('show_plot_numbers'); if (raw !== null) showPlotNumbers = raw === '1' || raw === 'true'; } catch (e) { }
+            try { const raw = localStorage.getItem('show_plot_numbers'); if (raw !== null) showPlotNumbers = raw === '1' || raw === 'true'; } catch (e) {}
             applyPlotNumberVisibility(showPlotNumbers);
-            if (togglePlotNumbersBtn) togglePlotNumbersBtn.addEventListener('click', function () {
+            if (togglePlotNumbersBtn) togglePlotNumbersBtn.addEventListener('click', function() {
                 showPlotNumbers = !showPlotNumbers;
-                try { localStorage.setItem('show_plot_numbers', showPlotNumbers ? '1' : '0'); } catch (e) { }
+                try { localStorage.setItem('show_plot_numbers', showPlotNumbers ? '1' : '0'); } catch (e) {}
                 applyPlotNumberVisibility(showPlotNumbers);
             });
 
             // Zoom reset button
             const zoomResetBtn = document.getElementById('zoomResetBtn');
-            if (zoomResetBtn) zoomResetBtn.addEventListener('click', function () { resetZoom(); });
+            if (zoomResetBtn) zoomResetBtn.addEventListener('click', function() { resetZoom(); });
 
             // Re-enable interactive pan (drag) inside the page container: allow pointer-drag to translate the zoomWrapper
             const wrapperEl = document.getElementById('zoomWrapper');
@@ -1225,7 +1205,7 @@
                     lastX = e.clientX;
                     lastY = e.clientY;
                     movedWhilePanning = false;
-                    try { mapInnerEl.setPointerCapture(e.pointerId); } catch (ex) { }
+                    try { mapInnerEl.setPointerCapture(e.pointerId); } catch (ex) {}
                     // stop any ongoing fling
                     stopFling();
                 }, { passive: false });
@@ -1250,7 +1230,7 @@
                 window.addEventListener('pointerup', function onUp(e) {
                     if (!isPanning) return;
                     isPanning = false;
-                    try { mapInnerEl.releasePointerCapture(e.pointerId); } catch (ex) { }
+                    try { mapInnerEl.releasePointerCapture(e.pointerId); } catch (ex) {}
                     // If the pointer didn't move significantly, treat this as a click (not a pan)
                     try {
                         if (!movedWhilePanning) {
@@ -1273,25 +1253,25 @@
                                     try {
                                         plotEl.classList.add('clicked-feedback');
                                         setTimeout(() => plotEl.classList.remove('clicked-feedback'), 300);
-                                    } catch (e) { }
+                                    } catch (e) {}
                                     // Open the modal for this plot
                                     openPlotModal(plotNum, faction);
                                 }
                             }
                         }
-                    } catch (err) { }
+                    } catch (err) {}
 
-                    // Additional capturing click listener as a robust fallback for clicks on markers
-                    // Click-capture fallback removed: no modal opened on clicks
+                                        // Additional capturing click listener as a robust fallback for clicks on markers
+                                        // Click-capture fallback removed: no modal opened on clicks
                 });
 
                 window.addEventListener('pointercancel', function onCancel(e) {
                     if (!isPanning) return;
                     isPanning = false;
-                    try { mapInnerEl.releasePointerCapture(e.pointerId); } catch (ex) { }
+                    try { mapInnerEl.releasePointerCapture(e.pointerId); } catch (ex) {}
                 });
                 // Wheel-to-zoom: when the mouse wheel is used over the visible map area, zoom centered on pointer
-                mapInnerEl.addEventListener('wheel', function (ev) {
+                    mapInnerEl.addEventListener('wheel', function (ev) {
                     // Only act when the pointer is over the map and the event is not from a touchpad two-finger scroll
                     // Prevent page scroll while zooming
                     ev.preventDefault();
@@ -1299,7 +1279,7 @@
                     // Normalize wheel direction: positive delta -> zoom out, negative -> zoom in
                     const zoomFactor = delta > 0 ? 0.92 : 1.08;
                     zoomAtPoint(ev.clientX, ev.clientY, zoomFactor, false);
-                }, { passive: false });
+                    }, { passive: false });
             }
 
             // Fling / inertia
@@ -1329,111 +1309,111 @@
 
             // minimap removed
 
-            // Keyboard panning removed per request
+                // Keyboard panning removed per request
 
 
             // On-screen pan buttons removed
 
             // Edit plots modal removed; edits are done inline below the map
 
-            // Modal close wiring for plot image modal
-            const plotModal = document.getElementById('plotImageModal');
-            const plotModalClose = document.getElementById('plotImageClose');
-            const plotPrevBtn = document.getElementById('plotPrevBtn');
-            const plotNextBtn = document.getElementById('plotNextBtn');
-            if (plotModalClose) plotModalClose.addEventListener('click', function () { if (plotModal) plotModal.style.display = 'none'; });
-            if (plotModal) plotModal.addEventListener('click', function (e) {
-                if (e.target === plotModal) plotModal.style.display = 'none';
-            });
-            if (plotPrevBtn) plotPrevBtn.addEventListener('click', function (ev) { ev.stopPropagation(); navigatePlot(-1); });
-            if (plotNextBtn) plotNextBtn.addEventListener('click', function (ev) { ev.stopPropagation(); navigatePlot(1); });
+                // Modal close wiring for plot image modal
+                    const plotModal = document.getElementById('plotImageModal');
+                    const plotModalClose = document.getElementById('plotImageClose');
+                    const plotPrevBtn = document.getElementById('plotPrevBtn');
+                    const plotNextBtn = document.getElementById('plotNextBtn');
+                    if (plotModalClose) plotModalClose.addEventListener('click', function() { if (plotModal) plotModal.style.display = 'none'; });
+                    if (plotModal) plotModal.addEventListener('click', function(e) {
+                        if (e.target === plotModal) plotModal.style.display = 'none';
+                    });
+                    if (plotPrevBtn) plotPrevBtn.addEventListener('click', function(ev) { ev.stopPropagation(); navigatePlot(-1); });
+                    if (plotNextBtn) plotNextBtn.addEventListener('click', function(ev) { ev.stopPropagation(); navigatePlot(1); });
 
-            // Keyboard navigation: left/right arrows to navigate, Esc to close
-            window.addEventListener('keydown', function (ev) {
-                try {
-                    if (!plotModal || plotModal.style.display === 'none') return;
-                    if (ev.key === 'ArrowLeft') { ev.preventDefault(); navigatePlot(-1); }
-                    else if (ev.key === 'ArrowRight') { ev.preventDefault(); navigatePlot(1); }
-                    else if (ev.key === 'Escape') { ev.preventDefault(); plotModal.style.display = 'none'; }
-                } catch (e) { }
-            });
+                    // Keyboard navigation: left/right arrows to navigate, Esc to close
+                    window.addEventListener('keydown', function(ev) {
+                        try {
+                            if (!plotModal || plotModal.style.display === 'none') return;
+                            if (ev.key === 'ArrowLeft') { ev.preventDefault(); navigatePlot(-1); }
+                            else if (ev.key === 'ArrowRight') { ev.preventDefault(); navigatePlot(1); }
+                            else if (ev.key === 'Escape') { ev.preventDefault(); plotModal.style.display = 'none'; }
+                        } catch (e) {}
+                    });
         });
 
         // Debug functions removed
 
-        // debug marker references/listeners removed
+            // debug marker references/listeners removed
 
         // Handlers for modal buttons (delegated)
-        // Helper to open the plot image modal consistently
-        // Navigation state for modal
-        let currentPlotIndex = -1;
+            // Helper to open the plot image modal consistently
+            // Navigation state for modal
+            let currentPlotIndex = -1;
 
-        function openPlotByIndex(index) {
-            if (!Array.isArray(plotPositions) || plotPositions.length === 0) return;
-            // Wrap around
-            const len = plotPositions.length;
-            let idx = index;
-            if (idx < 0) idx = (idx % len + len) % len;
-            if (idx >= len) idx = idx % len;
-            currentPlotIndex = idx;
-            const pos = plotPositions[currentPlotIndex];
-            if (!pos) return;
-            const mapKey = getCurrentMapKey();
-            const faction = /horde/i.test(mapKey) ? 'horde' : 'alliance';
-            try {
-                const modal = document.getElementById('plotImageModal');
-                const modalImg = document.getElementById('plotImageModalImg');
-                const caption = document.getElementById('plotImageCaption');
-                const interestedEl = document.getElementById('plotImageInterested');
-                if (!modal || !modalImg) return;
-                const imgSrc = `plots/${faction}/${pos.plotNumber}.jpg`;
-                modalImg.src = imgSrc;
-                if (caption) caption.textContent = getText('plotLabel', { num: pos.plotNumber }) + ` (${faction})`;
-                // Show interested names for the current map if present
+            function openPlotByIndex(index) {
+                if (!Array.isArray(plotPositions) || plotPositions.length === 0) return;
+                // Wrap around
+                const len = plotPositions.length;
+                let idx = index;
+                if (idx < 0) idx = (idx % len + len) % len;
+                if (idx >= len) idx = idx % len;
+                currentPlotIndex = idx;
+                const pos = plotPositions[currentPlotIndex];
+                if (!pos) return;
+                const mapKey = getCurrentMapKey();
+                const faction = /horde/i.test(mapKey) ? 'horde' : 'alliance';
                 try {
-                    const interestedForMap = (housingInterestedByMap && housingInterestedByMap[mapKey]) ? housingInterestedByMap[mapKey][pos.plotNumber] : '';
-                    if (interestedEl) interestedEl.textContent = interestedForMap ? (getText('interestedPrefix', { names: interestedForMap })) : '';
-                } catch (e) { if (interestedEl) interestedEl.textContent = ''; }
-                modal.style.display = 'flex';
-                // preload neighbors for faster navigation
-                try {
-                    const prevIdx = (currentPlotIndex - 1 + len) % len;
-                    const nextIdx = (currentPlotIndex + 1) % len;
-                    const prevSrc = `plots/${faction}/${plotPositions[prevIdx].plotNumber}.jpg`;
-                    const nextSrc = `plots/${faction}/${plotPositions[nextIdx].plotNumber}.jpg`;
-                    const pi = new Image(); pi.src = prevSrc;
-                    const ni = new Image(); ni.src = nextSrc;
-                } catch (e) { }
-            } catch (e) { console.warn('openPlotByIndex error', e); }
-        }
-
-        function navigatePlot(delta) {
-            if (!Array.isArray(plotPositions) || plotPositions.length === 0) return;
-            const next = (currentPlotIndex === -1) ? 0 : (currentPlotIndex + delta);
-            openPlotByIndex(next);
-        }
-
-        function openPlotModal(plotNumber, faction) {
-            try {
-                // Find index for plotNumber in plotPositions
-                const idx = plotPositions.findIndex(p => String(p.plotNumber) === String(plotNumber));
-                if (idx !== -1) {
-                    openPlotByIndex(idx);
-                } else {
-                    // fallback: just build a temporary position object and show
                     const modal = document.getElementById('plotImageModal');
                     const modalImg = document.getElementById('plotImageModalImg');
                     const caption = document.getElementById('plotImageCaption');
                     const interestedEl = document.getElementById('plotImageInterested');
                     if (!modal || !modalImg) return;
-                    const imgSrc = `plots/${faction}/${plotNumber}.jpg`;
+                    const imgSrc = `plots/${faction}/${pos.plotNumber}.jpg`;
                     modalImg.src = imgSrc;
-                    if (caption) caption.textContent = getText('plotLabel', { num: plotNumber }) + ` (${faction})`;
-                    if (interestedEl) interestedEl.textContent = '';
+                    if (caption) caption.textContent = getText('plotLabel', { num: pos.plotNumber }) + ` (${faction})`;
+                    // Show interested names for the current map if present
+                    try {
+                        const interestedForMap = (housingInterestedByMap && housingInterestedByMap[mapKey]) ? housingInterestedByMap[mapKey][pos.plotNumber] : '';
+                        if (interestedEl) interestedEl.textContent = interestedForMap ? (getText('interestedPrefix', { names: interestedForMap })) : '';
+                    } catch (e) { if (interestedEl) interestedEl.textContent = ''; }
                     modal.style.display = 'flex';
-                }
-            } catch (e) { console.warn('openPlotModal error', e); }
-        }
+                    // preload neighbors for faster navigation
+                    try {
+                        const prevIdx = (currentPlotIndex - 1 + len) % len;
+                        const nextIdx = (currentPlotIndex + 1) % len;
+                        const prevSrc = `plots/${faction}/${plotPositions[prevIdx].plotNumber}.jpg`;
+                        const nextSrc = `plots/${faction}/${plotPositions[nextIdx].plotNumber}.jpg`;
+                        const pi = new Image(); pi.src = prevSrc;
+                        const ni = new Image(); ni.src = nextSrc;
+                    } catch (e) {}
+                } catch (e) { console.warn('openPlotByIndex error', e); }
+            }
+
+            function navigatePlot(delta) {
+                if (!Array.isArray(plotPositions) || plotPositions.length === 0) return;
+                const next = (currentPlotIndex === -1) ? 0 : (currentPlotIndex + delta);
+                openPlotByIndex(next);
+            }
+
+            function openPlotModal(plotNumber, faction) {
+                try {
+                    // Find index for plotNumber in plotPositions
+                    const idx = plotPositions.findIndex(p => String(p.plotNumber) === String(plotNumber));
+                    if (idx !== -1) {
+                        openPlotByIndex(idx);
+                    } else {
+                        // fallback: just build a temporary position object and show
+                        const modal = document.getElementById('plotImageModal');
+                        const modalImg = document.getElementById('plotImageModalImg');
+                        const caption = document.getElementById('plotImageCaption');
+                        const interestedEl = document.getElementById('plotImageInterested');
+                        if (!modal || !modalImg) return;
+                        const imgSrc = `plots/${faction}/${plotNumber}.jpg`;
+                        modalImg.src = imgSrc;
+                        if (caption) caption.textContent = getText('plotLabel', { num: plotNumber }) + ` (${faction})`;
+                        if (interestedEl) interestedEl.textContent = '';
+                        modal.style.display = 'flex';
+                    }
+                } catch (e) { console.warn('openPlotModal error', e); }
+            }
 
         function chooseMap(mapFilename, remember) {
             initWithMap(mapFilename);
@@ -1530,11 +1510,11 @@
                 try {
                     const storedOverrides = localStorage.getItem('housing_overrides_by_map') || '{}';
                     if (storedOverrides !== overridesJson) localStorage.setItem('housing_overrides_by_map', overridesJson);
-                } catch (e) { }
+                } catch (e) {}
                 try {
                     const storedInterested = localStorage.getItem('housing_interested_by_map') || '{}';
                     if (storedInterested !== interestedJson) localStorage.setItem('housing_interested_by_map', interestedJson);
-                } catch (e) { }
+                } catch (e) {}
             } catch (e) {
                 // ignore network failures here; we'll keep trying
                 //console.warn('Realtime poll failed', e);
@@ -1545,11 +1525,11 @@
             // Start short polling loop
             if (realtimePollTimer) clearInterval(realtimePollTimer);
             // Do an immediate fetch then schedule (only if polling enabled)
-            try { if (typeof pollingEnabled === 'undefined' || pollingEnabled) pollForServerUpdates(); } catch (e) { }
+            try { if (typeof pollingEnabled === 'undefined' || pollingEnabled) pollForServerUpdates(); } catch (e) {}
             realtimePollTimer = setInterval(() => { if (typeof pollingEnabled === 'undefined' || pollingEnabled) pollForServerUpdates(); }, intervalMs);
 
             // Listen for localStorage changes (other tabs) and apply them immediately
-            window.addEventListener('storage', function (e) {
+            window.addEventListener('storage', function(e) {
                 try {
                     if (e.key === 'housing_overrides_by_map') {
                         const val = e.newValue ? JSON.parse(e.newValue) : {};
@@ -1569,7 +1549,7 @@
             });
             // Page Visibility: pause polling when the tab is hidden to save resources
             if (typeof document !== 'undefined' && 'visibilityState' in document) {
-                window.addEventListener('visibilitychange', function () {
+                window.addEventListener('visibilitychange', function() {
                     try {
                         if (document.hidden) {
                             window.pollingEnabled = false;
@@ -1580,17 +1560,17 @@
                             // immediate fetch on resume
                             pollForServerUpdates();
                         }
-                    } catch (e) { }
+                    } catch (e) {}
                 });
             }
         }
 
-
+        
     </script>
     <!-- map chooser removed; initialization uses saved map or default -->
-    <!-- Plot edit modal removed; use inline grid for edits -->
+        <!-- Plot edit modal removed; use inline grid for edits -->
     <script src="grid-overlay.js"></script>
-
+    
     <!-- Plot image modal -->
     <div id="plotImageModal" class="plot-image-modal" style="display:none;">
         <div class="plot-image-card">
