@@ -510,6 +510,8 @@ const debouncedSaveInterested = debounce(function() { saveInterested(); }, 700);
                 lbl.textContent = position.plotNumber;
                 // prevent label from intercepting pointer events (clicks should hit the plot container)
                 lbl.style.pointerEvents = 'none';
+                // Keep the label as a child of the plot container so we can position it
+                // relative to the icon and update its offset per-zoom in updatePlotPositions.
                 plot.appendChild(lbl);
 
                 
@@ -774,7 +776,22 @@ const debouncedSaveInterested = debounce(function() { saveInterested(); }, 700);
 
                         // nothing debug-related here
 
-                        
+                        // Adjust label position so it moves closer to the icon when zooming in,
+                        // while keeping its visual size constant.
+                        try {
+                            const lblEl = plot.querySelector('.plot-number-label');
+                            if (lblEl) {
+                                // inverse scale for visual constancy
+                                const invScale = (currentZoom && isFinite(currentZoom)) ? (1 / currentZoom) : 1;
+                                // base horizontal offset in px at zoom = 1
+                                const baseOffsetX = 12;
+                                // reduce offset when zooming in so label approaches the icon
+                                const offsetX = baseOffsetX / (currentZoom || 1);
+                                // keep vertical centering via -50% and apply inverse scale
+                                lblEl.style.transform = `translate(${offsetX}px, -50%) scale(${invScale})`;
+                                lblEl.style.transformOrigin = 'left center';
+                            }
+                        } catch (e) {}
                     }
                 });
                 // After resizing wrapper/background and repositioning plots, ensure view is clamped/centered

@@ -249,6 +249,8 @@ body {
     pointer-events: none;
     z-index: 20; /* above the dot */
     transition: transform 0.12s ease;
+    /* ensure the icon acts as a positioning context for its child label */
+    display: block;
 }
 
 /* Hover scaling applies to the icon only (multiplies the current icon scale) */
@@ -259,9 +261,9 @@ body {
 /* Small label showing the plot number next to the icon */
 .plot-number-label {
     position: absolute;
+    /* default: center-right relative to the plot container */
     left: 50%;
     top: 50%;
-    /* transform uses a variable for scale so JS can update without interfering with other transforms */
     transform: translate(12px, -50%) scale(var(--label-scale, 1));
     background: rgba(0,0,0,0.65);
     color: #fff;
@@ -271,6 +273,14 @@ body {
     z-index: 25;
     pointer-events: none; /* clicks pass through to the plot container */
     white-space: nowrap;
+}
+
+/* When the label is anchored inside the icon, position it just outside the icon's right edge */
+.house-plot .house-icon > .plot-number-label {
+    left: 100%;
+    top: 50%;
+    transform: translate(8px, -50%) scale(var(--label-scale, 1));
+    transform-origin: left center;
 }
 
 /* Hidden state for plot numbers */
