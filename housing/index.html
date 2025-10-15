@@ -87,7 +87,7 @@
         <!-- changeMapBtn removed: direct map buttons available in legend below -->
         <div style="margin-top:8px; text-align:center;">
                 <div style="display:flex; gap:6px; justify-content:center; margin-top:6px;">
-                <button id="chooseAllianceLegend" style="padding:6px 8px; font-size:12px;">Alliance</button>
+                <!-- <button id="chooseAllianceLegend" ...>Alliance</button> -->
                 <button id="chooseHordeLegend" style="padding:6px 8px; font-size:12px;">Horde</button>
             </div>
             <div style="display:flex; gap:6px; justify-content:center; margin-top:8px;">
@@ -207,7 +207,7 @@
         en: {
             inlinePlotHeader: 'Plots (Interested)',
             plotLabel: 'Plot {num}',
-            placeholderInterested: 'Interested',
+            placeholderInterested: 'Not yet reserved.',
             legendTitle: 'Legend',
             availableLabel: 'Available',
             interestedLabel: 'Interested',
@@ -231,7 +231,7 @@
     };
 
     // Add interestedPrefix translations
-    translations.en.interestedPrefix = 'Interested: {names}';
+    translations.en.interestedPrefix = 'Reserved to: {names}';
     translations.de.interestedPrefix = 'Interessenten: {names}';
 
     function applyVisibleLocale(locale) {
@@ -654,6 +654,7 @@ const debouncedSaveInterested = debounce(function() { saveInterested(); }, 700);
                         input.type = 'text';
                         input.placeholder = getText('placeholderInterested');
                     input.value = mapInterested[pos.plotNumber] || '';
+					if (input.value.trim() !== '') input.disabled = true;
                     input.dataset.plotNumber = pos.plotNumber;
                     input.className = 'plot-interested-input';
                     input.addEventListener('input', function() {
@@ -1095,7 +1096,7 @@ const VIEWPORT_FRACTION = 0.7;
             if (saved) saved = normalizeMapKey(saved);
             // Load overrides first, then init map so initial data is available
             await loadOverrides();
-            const startMap = saved || 'alliance_map.jpg';
+            const startMap = saved || 'horde_map.jpg';
             await initWithMap(startMap);
             // Ensure any zoom/translate state is reset on page load so the map is static
             currentZoom = 1.0;
